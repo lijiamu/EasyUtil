@@ -21,6 +21,10 @@
         </activity>
         <activity android:name=".date.DateActivity">
         </activity>
+        <activity android:name=".md5.MD5Activity">
+        </activity>
+        <activity android:name=".dialog.DialogTestActivity">
+        </activity>
     </application>
 
 </manifest>

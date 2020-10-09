@@ -5,7 +5,9 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.easyutil.date.DateActivity
+import com.easyutil.dialog.DialogTestActivity
 import com.easyutil.math.MathActivity
+import com.easyutil.md5.MD5Activity
 import com.easyutil.toast.ToastUtil
 
 class MainActivity : AppCompatActivity(),View.OnClickListener {
@@ -24,6 +26,12 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
             }
             R.id.btnDate ->{
                 intent = Intent(this,DateActivity::class.java)
+            }
+            R.id.btnMD5 ->{
+                intent = Intent(this,MD5Activity::class.java)
+            }
+            R.id.btnDialog ->{
+                intent = Intent(this,DialogTestActivity::class.java)
             }
         }
         if(intent!=null){
