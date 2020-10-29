@@ -1,12 +1,13 @@
 package com.easyutil.dialog
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.view.View
+import com.activity.BaseActivity
 import com.easyutil.R
 import com.easyutil.toast.ToastUtil
+import kotlinx.android.synthetic.main.activity_dialog_test.*
 
-class DialogTestActivity : AppCompatActivity(), View.OnClickListener {
+class DialogTestActivity : BaseActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.btnIosDialog -> {
@@ -37,5 +38,6 @@ class DialogTestActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dialog_test)
+        mTitleBar.setOnTitleBarListener(this)
     }
 }

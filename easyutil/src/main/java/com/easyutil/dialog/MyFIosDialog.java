@@ -13,6 +13,7 @@ import com.easyutil.R;
  *
  * @author Andy
  * @date 2017/8/29
+ * 仿IOS对话框
  */
 
 public class MyFIosDialog extends AlertDialog implements View.OnClickListener{

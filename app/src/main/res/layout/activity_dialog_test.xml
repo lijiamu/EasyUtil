@@ -5,15 +5,25 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".dialog.DialogTestActivity" android:id="@+id/a">
-
+    <com.view.titlebar.TitleBar
+            android:id="@+id/mTitleBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/shape_gradient"
+            app:barStyle="transparent"
+            app:leftBackground="@null"
+            app:leftTitle="返回"
+            app:title="对话框"
+            app:titleColor="@null"/>
     <Button
             android:text="IOS对话框"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="40dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="108dp"
             android:layout_marginStart="24dp" android:id="@+id/btnIosDialog" android:onClick="onClick"
             android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.469"/>
+            app:layout_constraintHorizontal_bias="0.416"/>
     <Button
             android:text="Loading"
             android:layout_width="wrap_content"
@@ -21,5 +31,5 @@
             android:id="@+id/btnLoading"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/btnIosDialog"
-            android:layout_marginTop="32dp" android:onClick="onClick"/>
+            android:layout_marginTop="116dp" android:onClick="onClick" app:layout_constraintHorizontal_bias="0.452"/>
 </android.support.constraint.ConstraintLayout>

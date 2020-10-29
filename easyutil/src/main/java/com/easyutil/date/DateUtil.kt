@@ -11,11 +11,26 @@ import java.util.regex.Pattern
  *description:日期类工具
  */
 object DateUtil {
-    var YEAR_MONTH_DAY = "yyyy-MM-dd"
-    var YEAR_MONTH_DAY_HHMMSS = "yyyy-MM-dd HH:mm:ss"
-    var YEAR_MONTH_DAY_HHMM = "yyyy-MM-dd HH:mm"
-    var HHMMSS = "HH:mm:ss"
-    var HHMM = "HH:mm"
+    /**
+     *年月日时分秒
+     */
+    val ALL ="yyyy-MM-dd HH:mm:ss"
+    /**
+     * 年月日时分
+     */
+    val YEAR_MONTH_DAY_HOUR_MIN ="yyyy-MM-dd HH:mm"
+    /**
+     *年月日
+     */
+    val YEAR_MONTH_DAY ="yyyy-MM-dd"
+    /**
+     * 时分
+     */
+    val HOURS_MINS ="HH:mm"
+    /**
+     * 月日时分
+     */
+    val MONTH_DAY_HOUR_MIN ="MM-dd HH:mm"
     /**
      * 根据传入的格式化类型来转换时间格式
      * @param time 时间

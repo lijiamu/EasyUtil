@@ -22,13 +22,13 @@ class DateActivity : AppCompatActivity(),View.OnClickListener {
             R.id.btnDate ->{
                 when(checkId){
                     R.id.radioButtonLong ->{
-                        txResult.text = StringBuilder("转换结果(Long)：").append(DateUtil.getDateString(System.currentTimeMillis(),DateUtil.YEAR_MONTH_DAY_HHMMSS))
+                        txResult.text = StringBuilder("转换结果(Long)：").append(DateUtil.getDateString(System.currentTimeMillis(),DateUtil.ALL))
                     }
                     R.id.radioButtonDate ->{
-                        txResult.text = StringBuilder("转换结果(Date)：").append(DateUtil.getDateString(Date(),DateUtil.YEAR_MONTH_DAY_HHMMSS))
+                        txResult.text = StringBuilder("转换结果(Date)：").append(DateUtil.getDateString(Date(),DateUtil.ALL))
                     }
                     R.id.radioButtonString ->{
-                        txResult.text = StringBuilder("转换结果(String)：").append(DateUtil.getDateString(editText.text.toString(),DateUtil.YEAR_MONTH_DAY_HHMMSS,DateUtil.YEAR_MONTH_DAY))
+                        txResult.text = StringBuilder("转换结果(String)：").append(DateUtil.getDateString(editText.text.toString(),DateUtil.ALL,DateUtil.YEAR_MONTH_DAY))
                     }
                 }
             }
