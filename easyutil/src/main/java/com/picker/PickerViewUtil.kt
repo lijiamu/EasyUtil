@@ -20,23 +20,23 @@ object PickerViewUtil {
     /**
      *年月日时分秒
      */
-    val ALL ="yyyy-MM-dd HH:mm:ss"
+    const val ALL ="yyyy-MM-dd HH:mm:ss"
     /**
      * 年月日时分
      */
-    val YEAR_MONTH_DAY_HOUR_MIN ="yyyy-MM-dd HH:mm"
+    const val YEAR_MONTH_DAY_HOUR_MIN ="yyyy-MM-dd HH:mm"
     /**
      *年月日
      */
-    val YEAR_MONTH_DAY ="yyyy-MM-dd"
+    const val YEAR_MONTH_DAY ="yyyy-MM-dd"
     /**
      * 时分
      */
-    val HOURS_MINS ="HH:mm"
+    const val HOURS_MINS ="HH:mm"
     /**
      * 月日时分
      */
-    val MONTH_DAY_HOUR_MIN ="MM-dd HH:mm"
+    const val MONTH_DAY_HOUR_MIN ="MM-dd HH:mm"
 
     /**
      * 时间选择器
@@ -45,16 +45,12 @@ object PickerViewUtil {
      */
     fun pickerDateUtil(context: Context,dateFormat:String,textView: TextView?) {
         var type = booleanArrayOf(true, true, true, false, false, false)
-        if (dateFormat === ALL) {
-            type= booleanArrayOf(true, true, true, true, true, true)
-        } else if (dateFormat === YEAR_MONTH_DAY) {
-            type= booleanArrayOf(true, true, true, false, false, false)
-        } else if (dateFormat === YEAR_MONTH_DAY_HOUR_MIN) {
-            type= booleanArrayOf(true, true, true, true, true, false)
-        } else if (dateFormat === HOURS_MINS) {
-            type= booleanArrayOf(false, false, false, false, true, true)
-        } else if (dateFormat === MONTH_DAY_HOUR_MIN) {
-            type= booleanArrayOf(false, true, true, true, true, false)
+        when {
+            dateFormat === ALL -> type= booleanArrayOf(true, true, true, true, true, true)
+            dateFormat === YEAR_MONTH_DAY -> type= booleanArrayOf(true, true, true, false, false, false)
+            dateFormat === YEAR_MONTH_DAY_HOUR_MIN -> type= booleanArrayOf(true, true, true, true, true, false)
+            dateFormat === HOURS_MINS -> type= booleanArrayOf(false, false, false, false, true, true)
+            dateFormat === MONTH_DAY_HOUR_MIN -> type= booleanArrayOf(false, true, true, true, true, false)
         }
         var pvTime = TimePickerBuilder(context,
             OnTimeSelectListener { date, v ->
@@ -66,7 +62,6 @@ object PickerViewUtil {
             .build()
         pvTime.show()
     }
-
     /**
      * 普通 条件选择器
      * @param context Context
@@ -74,7 +69,7 @@ object PickerViewUtil {
      * @param textView TextView? 需要记录结果的控件
      */
     fun pickerNoramlUtil(context: Context,data:List<String>,textView: TextView?) {
-        val pvOptions = OptionsPickerBuilder(context, OnOptionsSelectListener { options1, option2, options3, v ->
+         var pvOptions = OptionsPickerBuilder(context, OnOptionsSelectListener { options1, option2, options3, v ->
             textView?.text = data[options1]
             Toast.makeText(context, data[options1], Toast.LENGTH_SHORT).show()
         }).build<String>()
@@ -83,6 +78,44 @@ object PickerViewUtil {
         if (!TextUtils.isEmpty(selectText)) {
             val selectPotions = data.indexOf(selectText)
             pvOptions.setSelectOptions(selectPotions)
+        }
+        pvOptions.show()
+    }
+    /**
+     * 选择城市 -- 省市区
+     * @param context Context
+     * @param textView TextView
+     */
+    fun pickerCityUtil(context: Context, textView: TextView) {
+        if (CityData.provinceList.size == 0 || CityData.cityList.size == 0 || CityData.areaList.size == 0) {
+            CityData.initCity(context)
+        }
+        var pvOptions = OptionsPickerBuilder(context, OnOptionsSelectListener { options1, option2, options3, v ->
+            var address = CityData.provinceList[options1] + "-" + CityData.cityList[options1][option2] + "-" + CityData.areaList[options1][option2][options3]
+            textView.text = address
+        }).build<String>()
+        pvOptions.setPicker(CityData.provinceList, CityData.cityList, CityData.areaList)
+        val selectText = textView.text.toString()
+        if (!TextUtils.isEmpty(selectText)) {
+            var options1 = 0
+            var options2 = 0
+            var options3 = 0
+            val selectTextList = selectText.split("-".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+            if (selectTextList != null) {
+                if (selectTextList.isNotEmpty()) {
+                    options1 = CityData.provinceList.indexOf(selectTextList[0])
+                    if (options1 >= 0 && selectTextList.size > 1) {
+                        options2 = CityData.cityList[options1].indexOf(selectTextList[1])
+                        if (options2 >= 0 && selectTextList.size > 2) {
+                            options3 = CityData.areaList[options1][options2].indexOf(selectTextList[2])
+                        }
+                    }
+                }
+            }
+            options1 = if (options1 >= 0) options1 else 0
+            options2 = if (options2 >= 0) options2 else 0
+            options3 = if (options3 >= 0) options3 else 0
+            pvOptions.setSelectOptions(options1, options2, options3)
         }
         pvOptions.show()
     }

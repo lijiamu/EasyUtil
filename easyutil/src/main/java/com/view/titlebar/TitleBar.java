@@ -21,31 +21,45 @@ import com.easyutil.R;
 import com.view.titlebar.initializer.*;
 
 /**
- *    author : Android 轮子哥
- *    github : https://github.com/getActivity/TitleBar
- *    time   : 2018/08/17
- *    desc   : Android 通用标题栏
+ * author : Android 轮子哥
+ * github : https://github.com/getActivity/TitleBar
+ * time   : 2018/08/17
+ * desc   : Android 通用标题栏
+ *
+ * @author Andy
  */
 public class TitleBar extends FrameLayout
         implements View.OnClickListener,
         View.OnLayoutChangeListener {
 
-    /** 默认初始化器 */
+    /**
+     * 默认初始化器
+     */
     private static ITitleBarInitializer sGlobalInitializer;
-    /** 当前初始化器 */
+    /**
+     * 当前初始化器
+     */
     private final ITitleBarInitializer mCurrentInitializer;
 
-    /** 监听器对象 */
+    /**
+     * 监听器对象
+     */
     private OnTitleBarListener mListener;
 
-    /** 标题栏子 View */
+    /**
+     * 标题栏子 View
+     */
     private final TextView mLeftView, mTitleView, mRightView;
     private final View mLineView;
 
-    /** 控件内间距 */
+    /**
+     * 控件内间距
+     */
     private int mHorizontalPadding, mVerticalPadding;
 
-    /** 图标显示大小 */
+    /**
+     * 图标显示大小
+     */
     private int mDrawableSize = -1;
 
     public TitleBar(Context context) {
@@ -80,7 +94,7 @@ public class TitleBar extends FrameLayout
                 mCurrentInitializer = new RippleBarInitializer();
                 break;
             default:
-                mCurrentInitializer =sGlobalInitializer;
+                mCurrentInitializer = sGlobalInitializer;
                 break;
         }
 
@@ -120,7 +134,8 @@ public class TitleBar extends FrameLayout
                             // 设置标题
                             setTitle(label);
                         }
-                    } catch (PackageManager.NameNotFoundException ignored) {}
+                    } catch (PackageManager.NameNotFoundException ignored) {
+                    }
                 }
             }
         }
@@ -502,6 +517,7 @@ public class TitleBar extends FrameLayout
     public TitleBar setLineColor(int color) {
         return setLineDrawable(new ColorDrawable(color));
     }
+
     public TitleBar setLineDrawable(Drawable drawable) {
         BaseBarInitializer.setViewBackground(mLineView, drawable);
         return this;

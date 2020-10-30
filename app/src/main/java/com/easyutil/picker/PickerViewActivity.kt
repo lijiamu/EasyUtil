@@ -12,21 +12,20 @@ class PickerViewActivity : BaseActivity(), View.OnClickListener {
         when (v?.id) {
             R.id.btnPickerViewDate -> {
                 var dateFormat = PickerViewUtil.ALL
-                if(radio1.isChecked){
-                    dateFormat = PickerViewUtil.ALL
-                }else  if(radio2.isChecked){
-                    dateFormat = PickerViewUtil.YEAR_MONTH_DAY_HOUR_MIN
-                }else  if(radio3.isChecked){
-                    dateFormat = PickerViewUtil.YEAR_MONTH_DAY
-                }else  if(radio4.isChecked){
-                    dateFormat = PickerViewUtil.HOURS_MINS
-                }else  if(radio5.isChecked){
-                    dateFormat = PickerViewUtil.MONTH_DAY_HOUR_MIN
+                when {
+                    radio1.isChecked -> dateFormat = PickerViewUtil.ALL
+                    radio2.isChecked -> dateFormat = PickerViewUtil.YEAR_MONTH_DAY_HOUR_MIN
+                    radio3.isChecked -> dateFormat = PickerViewUtil.YEAR_MONTH_DAY
+                    radio4.isChecked -> dateFormat = PickerViewUtil.HOURS_MINS
+                    radio5.isChecked -> dateFormat = PickerViewUtil.MONTH_DAY_HOUR_MIN
                 }
                 PickerViewUtil.pickerDateUtil(this@PickerViewActivity,dateFormat,txResult)
             }
             R.id.btnPickerViewNormal ->{
                 PickerViewUtil.pickerNoramlUtil(this@PickerViewActivity, listOf("A","B","C","D"),txResult)
+            }
+            R.id.btnPickerViewNorma2 ->{
+                PickerViewUtil.pickerCityUtil(this@PickerViewActivity, txResult)
             }
         }
     }
