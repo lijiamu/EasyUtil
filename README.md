@@ -1,6 +1,7 @@
 # EasyUtil
 Android常用Util集合。  
 util功能:  
+[APKDemo下载](http://d.7short.com/EasyUtil)
 #### ☆DateUtil  日期格式转换    
 支持年月日时分秒自由组合转换。  
 #### ☆DensityUtil 单位转换（android常用单位dip、sp与px互转）  
