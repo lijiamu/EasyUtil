@@ -17,7 +17,7 @@ MD5加密
 3.支持自定义选项选择；  
 ####☆TitleBar 自定义标题栏  
 详细情况 请参考demo
-```javascript
+```xml
   <com.view.titlebar.TitleBar
             android:id="@+id/mTitleBar"
             android:layout_width="wrap_content"
@@ -29,19 +29,20 @@ MD5加密
             app:leftTitle="返回"
             app:title="对话框"
             app:titleColor="@null"/>
-    ```
+```
+  
 使用  
 Step 1.Add it in your root build.gradle at the end of repositories:
-```javascript
+```java
     allprojects {
         repositories {
     		...
 			maven { url 'https://jitpack.io' }
 		}
 	}
-    ```
+```
 Step 2. Add the dependency
-```javascript
+```java
 	dependencies {
 	        implementation 'com.github.lijiamu:EasyUtil:Tag'
 	}
