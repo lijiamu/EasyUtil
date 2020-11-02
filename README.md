@@ -46,7 +46,7 @@ Step 2. Add the dependency
 	dependencies {
 	        implementation 'com.github.lijiamu:EasyUtil:Tag'
 	}
-    ```
+```
    
 感谢[Android轮子哥](https://github.com/getActivity)
 
