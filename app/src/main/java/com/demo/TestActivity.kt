@@ -1,7 +1,8 @@
-package com.easyutil
+package com.demo
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.easyutil.demo.R
 
 /**
  * 折叠效果

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".dialog.DialogTestActivity" android:id="@+id/a">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.demo.dialog.DialogTestActivity" android:id="@+id/a">
     <com.view.titlebar.TitleBar
             android:id="@+id/mTitleBar"
             android:layout_width="wrap_content"
@@ -20,10 +20,10 @@
             android:text="IOS对话框"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="108dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="64dp"
             android:layout_marginStart="24dp" android:id="@+id/btnIosDialog" android:onClick="onClick"
             android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.416"/>
+            app:layout_constraintHorizontal_bias="0.469"/>
     <Button
             android:text="Loading"
             android:layout_width="wrap_content"
@@ -31,5 +31,37 @@
             android:id="@+id/btnLoading"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/btnIosDialog"
-            android:layout_marginTop="116dp" android:onClick="onClick" app:layout_constraintHorizontal_bias="0.452"/>
+            android:layout_marginTop="16dp" android:onClick="onClick"/>
+    <Button
+            android:text="单选对话框"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnRadio"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:onClick="onClick" android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/btnLoading"/>
+
+    <Button
+        android:id="@+id/btnCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:onClick="onClick"
+        android:text="多选对话框"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRadio" />
+
+    <TextView
+        android:id="@+id/textResult"
+        android:layout_width="wrap_content"
+        android:layout_height="29dp"
+        android:layout_marginTop="16dp"
+        android:onClick="onClick"
+        android:text="选择结果："
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCheckBox" />
 </android.support.constraint.ConstraintLayout>

@@ -1,0 +1,12 @@
+打包包名：com.easyutil
+android签名文件
+别名：easyUtil
+密码：123456
+
+         MD5:
+         SHA1:
+         SHA256:
+         签名算法名称: SHA256withRSA
+         版本: 3
+		 
+		 命令：keytool -v -list -keystore E:\WorkSpace\XG_APP\XG_APP\app\keystore/xg.jks

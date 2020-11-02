@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.easyutil">
+          package="com.easyutil.demo">
 
     <application
             android:allowBackup="true"
@@ -10,7 +10,7 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:name="com.application.BaseApplication">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.demo.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <action android:name="android.intent.action.VIEW"/>
@@ -18,19 +18,19 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".math.MathActivity">
+        <activity android:name="com.demo.math.MathActivity">
         </activity>
-        <activity android:name=".date.DateActivity">
+        <activity android:name="com.demo.date.DateActivity">
         </activity>
-        <activity android:name=".md5.MD5Activity">
+        <activity android:name="com.demo.md5.MD5Activity">
         </activity>
-        <activity android:name=".dialog.DialogTestActivity">
+        <activity android:name="com.demo.dialog.DialogTestActivity">
         </activity>
-        <activity android:name=".TestActivity">
+        <activity android:name="com.demo.TestActivity">
         </activity>
-        <activity android:name=".titlebar.TitleBarActivity">
+        <activity android:name="com.demo.titlebar.TitleBarActivity">
         </activity>
-        <activity android:name=".picker.PickerViewActivity">
+        <activity android:name="com.demo.picker.PickerViewActivity">
         </activity>
     </application>
 

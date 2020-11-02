@@ -1,9 +1,10 @@
-package com.easyutil.md5
+package com.demo.md5
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.easyutil.R
+import com.easyutil.demo.R
+import com.easyutil.md5.MD5Util
 import kotlinx.android.synthetic.main.activity_md5.*
 
 /**

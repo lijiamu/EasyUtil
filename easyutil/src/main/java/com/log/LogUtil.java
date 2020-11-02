@@ -15,23 +15,31 @@ public class LogUtil {
         ifShow = b;
     }
 
-    public static void i(String string) {
+    /**
+     *
+     * @param msg 日志消息
+     */
+    public static void i(String msg) {
         StackTraceElement[] s = Thread.currentThread().getStackTrace();
         String methodName = s[3].getMethodName();
         String fileName = s[3].getFileName();
         int lineNum = s[3].getLineNumber();
         if (ifShow) {
-            Log.i(fileName, "methodName："+methodName +" lineNum:" +lineNum+" msg:" + string);
+            Log.i(fileName, "methodName："+methodName +" lineNum:" +lineNum+" msg:" + msg);
         }
     }
 
-    public static void e(String string) {
+    /**
+     *
+     * @param msg 日志消息
+     */
+    public static void e(String msg) {
         StackTraceElement[] s = Thread.currentThread().getStackTrace();
         String methodName = s[3].getMethodName();
         String fileName = s[3].getFileName();
         int lineNum = s[3].getLineNumber();
         if (ifShow) {
-            Log.e(fileName, "methodName："+methodName +" lineNum:" +lineNum+" msg:" + string);
+            Log.e(fileName, "methodName："+methodName +" lineNum:" +lineNum+" msg:" + msg);
         }
 
     }

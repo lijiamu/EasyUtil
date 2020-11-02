@@ -53,7 +53,7 @@ object PickerViewUtil {
             dateFormat === MONTH_DAY_HOUR_MIN -> type= booleanArrayOf(false, true, true, true, true, false)
         }
         var pvTime = TimePickerBuilder(context,
-            OnTimeSelectListener { date, v ->
+            OnTimeSelectListener { date, _ ->
                 val str = DateUtil.getDateString(date,dateFormat)
                 textView?.text = str
                 Toast.makeText(context, str, Toast.LENGTH_SHORT).show()

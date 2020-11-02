@@ -1,11 +1,16 @@
-package com.easyutil.dialog
+package com.demo.dialog
 
 import android.os.Bundle
 import android.view.View
 import com.activity.BaseActivity
-import com.easyutil.R
+import com.easyutil.demo.R
+import com.easyutil.dialog.CheckBoxDialog
+import com.easyutil.dialog.FIosDialog
+import com.easyutil.dialog.LoadingDialog
+import com.easyutil.dialog.RadioDialog
 import com.easyutil.toast.ToastUtil
 import kotlinx.android.synthetic.main.activity_dialog_test.*
+import java.lang.Boolean
 
 
 class DialogTestActivity : BaseActivity(), View.OnClickListener {
@@ -28,18 +33,19 @@ class DialogTestActivity : BaseActivity(), View.OnClickListener {
                 val loadingDialog = LoadingDialog(
                     this,
                     R.style.dialog,
-                    java.lang.Boolean.valueOf(false),
-                    java.lang.Boolean.valueOf(true)
+                    Boolean.valueOf(false),
+                    Boolean.valueOf(true)
                 )
                 loadingDialog.show()
             }
             R.id.btnRadio -> {
                 val items = arrayListOf("单选1", "单选2", "单选3", "单选4","单选5", "单选6", "单选7", "单选8","单选9", "单选10", "单选11", "单选12")
-                val radioDialog = RadioDialog(this, R.style.dialog, items,"标题A","取消","确定",textResult)
+                val radioDialog =
+                    RadioDialog(this, R.style.dialog, items, "标题A", "取消", "确定", textResult)
                 radioDialog.show()
 //                val alertBuilder = AlertDialog.Builder(this)
 //                alertBuilder.setTitle("这是单选框")
-//                alertBuilder.setSingleChoiceItems(items, 0,
+//                alertBuilder.setSingleChoiceItems(arrayOf("aa","bb"), 0,
 //                    DialogInterface.OnClickListener { dialogInterface, i ->
 //                        Toast.makeText(
 //                            this@DialogTestActivity,
@@ -59,7 +65,8 @@ class DialogTestActivity : BaseActivity(), View.OnClickListener {
             }
             R.id.btnCheckBox ->{
                 val items = arrayListOf("单选1", "单选2", "单选3", "单选4","单选5", "单选6", "单选7", "单选8","单选9", "单选10", "单选11", "单选12")
-               var checkBoxDialog = CheckBoxDialog(this, R.style.dialog, items,"标题A","取消","确定",textResult)
+               var checkBoxDialog =
+                   CheckBoxDialog(this, R.style.dialog, items, "标题A", "取消", "确定", textResult)
                 checkBoxDialog.show()
             }
         }

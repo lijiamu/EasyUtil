@@ -1,9 +1,9 @@
-package com.easyutil.picker
+package com.demo.picker
 
 import android.os.Bundle
 import android.view.View
 import com.activity.BaseActivity
-import com.easyutil.R
+import com.easyutil.demo.R
 import com.picker.PickerViewUtil
 import kotlinx.android.synthetic.main.activity_picker_view.*
 

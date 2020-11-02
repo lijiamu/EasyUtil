@@ -1,16 +1,16 @@
-package com.easyutil
+package com.demo
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.activity.BaseActivity
-import com.easyutil.date.DateActivity
-import com.easyutil.dialog.DialogTestActivity
-import com.easyutil.math.MathActivity
-import com.easyutil.md5.MD5Activity
-import com.easyutil.picker.PickerViewActivity
-import com.easyutil.titlebar.TitleBarActivity
+import com.demo.date.DateActivity
+import com.demo.dialog.DialogTestActivity
+import com.demo.math.MathActivity
+import com.demo.md5.MD5Activity
+import com.demo.picker.PickerViewActivity
+import com.demo.titlebar.TitleBarActivity
+import com.easyutil.demo.R
 import com.easyutil.toast.ToastUtil
 
 class MainActivity : BaseActivity(),View.OnClickListener {
@@ -26,16 +26,16 @@ class MainActivity : BaseActivity(),View.OnClickListener {
                 ToastUtil.show(this,"吐司测试")
             }
             R.id.btnMath ->{
-                intent = Intent(this,MathActivity::class.java)
+                intent = Intent(this, MathActivity::class.java)
             }
             R.id.btnDate ->{
-                intent = Intent(this,DateActivity::class.java)
+                intent = Intent(this, DateActivity::class.java)
             }
             R.id.btnMD5 ->{
-                intent = Intent(this,MD5Activity::class.java)
+                intent = Intent(this, MD5Activity::class.java)
             }
             R.id.btnDialog ->{
-                intent = Intent(this,DialogTestActivity::class.java)
+                intent = Intent(this, DialogTestActivity::class.java)
 //                intent = Intent(this,TestActivity::class.java)
             }
             R.id.btnTitleBar ->{

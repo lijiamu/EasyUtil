@@ -1,9 +1,9 @@
-package com.easyutil.titlebar
+package com.demo.titlebar
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.easyutil.R
+import com.easyutil.demo.R
 import com.easyutil.toast.ToastUtil
 import com.view.titlebar.OnTitleBarListener
 import kotlinx.android.synthetic.main.activity_title_bar.*
