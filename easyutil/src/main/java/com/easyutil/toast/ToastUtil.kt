@@ -2,6 +2,7 @@ package com.easyutil.toast
 
 import android.content.Context
 import android.widget.Toast
+import com.application.BaseApplication
 
 /**
  *@author：李佳模
@@ -14,6 +15,15 @@ object ToastUtil {
     fun show(context: Context, msg: String) {
         if (toast == null) {
             toast = Toast.makeText(context, msg, Toast.LENGTH_SHORT)
+        } else {
+            toast!!.setText(msg)
+        }
+        toast!!.show()
+    }
+    @JvmStatic
+    fun show(msg: String) {
+        if (toast == null) {
+            toast = Toast.makeText(BaseApplication.getInstence(), msg, Toast.LENGTH_SHORT)
         } else {
             toast!!.setText(msg)
         }

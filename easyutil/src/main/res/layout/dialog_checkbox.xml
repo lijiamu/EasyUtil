@@ -1,0 +1,92 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/linear_bg"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/transparent"
+	android:gravity="center"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:layout_width="265dp"
+		android:layout_height="wrap_content"
+		android:background="@drawable/ios_white_radius"
+		android:gravity="center"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10dp"
+			android:background="@color/white"
+			android:orientation="vertical">
+
+			<TextView
+				android:id="@+id/titleView"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal"
+				android:gravity="center"
+				android:paddingBottom="10dp"
+				android:text="标题"
+				android:textColor="@color/black"
+				android:textSize="14sp"
+				android:textStyle="bold" />
+
+			<View style="@style/lineHorizontal" />
+
+			<ScrollView
+				android:layout_width="match_parent"
+				android:layout_height="200dp"
+				android:scrollbars="none">
+
+				<LinearLayout
+					android:id="@+id/linearContent"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:padding="10dp" />
+			</ScrollView>
+		</LinearLayout>
+
+		<View
+			style="@style/lineHorizontal"
+			android:background="@color/lightGray" />
+
+		<LinearLayout
+			android:id="@+id/alert_dialog_choose_layout"
+			android:layout_width="match_parent"
+			android:layout_height="45dp"
+			android:gravity="center_vertical"
+			android:orientation="horizontal">
+
+			<Button
+				android:id="@+id/leftButton"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+				android:background="@drawable/ios_button_click_left"
+				android:gravity="center"
+				android:onClick="onClick"
+				android:textColor="@color/blue"
+				android:textSize="14sp" />
+
+			<TextView
+				android:id="@+id/text_xian"
+				android:layout_width="1dip"
+				android:layout_height="fill_parent"
+				android:background="@color/lightGray" />
+
+			<Button
+				android:id="@+id/rightButton"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+				android:background="@drawable/ios_button_click_right"
+				android:gravity="center"
+				android:onClick="onClick"
+				android:textColor="@color/blue"
+				android:textSize="14sp" />
+		</LinearLayout>
+
+	</LinearLayout>
+</LinearLayout>

@@ -4,6 +4,7 @@ import android.content.Context;
 
 /**
  * 密度转换工具类
+ * @author Andy
  */
 public class DensityUtil {
 	/**
@@ -44,7 +45,7 @@ public class DensityUtil {
       * @return   像素值
       */ 
      public static int sp2px(Context context, float spValue) { 
-         final float fontScale = context.getResources().getDisplayMetrics().scaledDensity; 
-         return (int) (spValue * fontScale + 0.5f); 
+         final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
+         return (int) (spValue * fontScale + 0.5f);
      } 
 }

@@ -16,7 +16,7 @@ import com.easyutil.R;
  * 仿IOS对话框
  */
 
-public class MyFIosDialog extends AlertDialog implements View.OnClickListener{
+public class FIosDialog extends AlertDialog implements View.OnClickListener{
 
     private Button alertDialogLeftBtn;
     private Button alertDialogRightBtn;
@@ -25,11 +25,11 @@ public class MyFIosDialog extends AlertDialog implements View.OnClickListener{
     private String hint;
     private String leftBtnText;
     private String rightBtnText;
-    private FIosDialogClick onClickListener;
+    private FiosDialogClick onClickListener;
     public static final int LeftButton = -1;
     public static final int RightButton = -2;
     private boolean isShowRight=true;
-    public MyFIosDialog(Context context, @StyleRes int themeResId, String title, String hint, String leftBtnText, String rightBtnText, FIosDialogClick onClickListener) {
+    public FIosDialog(Context context, @StyleRes int themeResId, String title, String hint, String leftBtnText, String rightBtnText, FiosDialogClick onClickListener) {
         super(context, themeResId);
         this.title = title;
         this.hint = hint;
@@ -37,7 +37,7 @@ public class MyFIosDialog extends AlertDialog implements View.OnClickListener{
         this.rightBtnText = rightBtnText;
         this.onClickListener =onClickListener;
     }
-    public MyFIosDialog(Context context, @StyleRes int themeResId, String title, String hint, String leftBtnText, String rightBtnText, FIosDialogClick onClickListener, boolean isShowRight) {
+    public FIosDialog(Context context, @StyleRes int themeResId, String title, String hint, String leftBtnText, String rightBtnText, FiosDialogClick onClickListener, boolean isShowRight) {
         super(context, themeResId);
         this.title = title;
         this.hint = hint;
@@ -66,7 +66,11 @@ public class MyFIosDialog extends AlertDialog implements View.OnClickListener{
         }
     }
 
-    public interface  FIosDialogClick{
+    public interface  FiosDialogClick{
+        /**
+         *
+         * @param which
+         */
         void fIosDialogClick(int which);
     }
     public  void setText( String title, String hint,String leftBtnText,String rightBtnText){

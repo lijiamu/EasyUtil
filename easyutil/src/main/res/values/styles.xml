@@ -15,4 +15,30 @@
         <!-- 屏幕背景是否变暗 -->
         <item name="android:backgroundDimAmount">0.5</item>
     </style>
+
+    <style name="lineVertical">
+        <item name="android:layout_width">0.1dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/lightGray</item>
+    </style>
+
+    <style name="lineHorizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.1dp</item>
+        <item name="android:background">@color/lightGray</item>
+    </style>
+    <style name="textTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/titleColoc</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:background">@color/white</item>
+    </style>
+    <style name="textContent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/contentColor</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:background">@color/white</item>
+    </style>
 </resources>
