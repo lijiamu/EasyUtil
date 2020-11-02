@@ -1,21 +1,21 @@
 # EasyUtil
 Android常用Util集合。  
 util功能:  
-####☆DateUtil  日期格式转换    
+#### ☆DateUtil  日期格式转换    
 支持年月日时分秒自由组合转换。  
-####☆DensityUtil 单位转换（android常用单位dip、sp与px互转）  
-####☆MathUtil 数学类工具类  
+#### ☆DensityUtil 单位转换（android常用单位dip、sp与px互转）  
+#### ☆MathUtil 数学类工具类  
 验证值是否是数字、是否是整数、四舍五入后的值。  
-####☆MD5Util   
+#### ☆MD5Util   
 MD5加密  
-####☆ToastUtil 统一吐司类  
-####☆LogUtil 统一日志类  
+#### ☆ToastUtil 统一吐司类  
+#### ☆LogUtil 统一日志类  
 支持输出文件名+方法名+代码行数+输出的msg,方便快速定位日志打印位置。  
-####☆PickerViewUtil  
+#### ☆PickerViewUtil  
 1.支持选择日期（年月日时分秒自由组合，例如yyyy-MM-dd）；  
 2.支持选择城市（省市区）；  
 3.支持自定义选项选择；  
-####☆TitleBar 自定义标题栏  
+#### ☆TitleBar 自定义标题栏  
 详细情况 请参考demo
 ```xml
   <com.view.titlebar.TitleBar
